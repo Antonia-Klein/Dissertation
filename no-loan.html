@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>尚未贷款用户</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .dashboard-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .dashboard-section h2 {
+      text-align: center;
+      color: #1e3a8a;
+      margin-bottom: 20px;
+    }
+
+    .dashboard-section p {
+      line-height: 1.8;
+      color: #333;
+      font-size: 16px;
+      text-align: justify;
+    }
+
+    .tableau-embed {
+      width: 100%;
+      height: 800px;
+      border: none;
+      margin-top: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>贷款前的准备</h1>
+      <p>我们为您准备了关键的信息，助您做好贷款决策</p>
+    </header>
+
+    <main class="dashboard-section">
+      <h2>贷款前的核心参考信息</h2>
+      <p>
+        以下仪表盘展示了三方面的内容，帮助您从大数据中了解贷款人的典型画像：
+      </p>
+      <ul>
+        <li><strong>不同贷款目的下的 DTI 情况：</strong>DTI 是“收入中用来还债的比例”，数值越高，意味着压力越大，影响贷款资格。</li>
+        <li><strong>不同工作年限人群的贷款偏好：</strong>您可以看到刚工作的人和工作多年的人，在贷款金额、利率、还款期限上有哪些差异。</li>
+        <li><strong>各类贷款目标的“经典方案”组合：</strong>例如，某类目的贷款通常申请多少金额、选择多长还款期、常见的利率区间等等。</li>
+      </ul>
+
+      <!-- Tableau 仪表盘嵌入 -->
+      <iframe
+        class="tableau-embed"
+        src="https://public.tableau.com/views/WanqingLyu-Dissertation/Web1?:language=zh-CN&:display_count=n&:origin=viz_share_link"
+        allowfullscreen
+      ></iframe>
+    </main>
+
+    <footer>
+      <p>© 2025 贷款助手</p>
+    </footer>
+  </div>
+</body>
+</html>
