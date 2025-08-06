@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>I am considering loan</title>
-  <link rel="stylesheet" href="style.css">
-
-  <!-- 引入 Tableau Embedding API v3 -->
   <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
-
   <style>
     .dashboard-section {
       max-width: 1000px;
@@ -21,32 +17,25 @@
       margin-bottom: 20px;
     }
 
-    .dashboard-section p {
-      line-height: 1.8;
-      color: #333;
-      font-size: 16px;
-      text-align: justify;
-    }
-
+    .dashboard-section p,
     .dashboard-section ul {
-      line-height: 1.8;
       font-size: 16px;
       color: #333;
+      line-height: 1.8;
     }
 
     tableau-viz {
-      display: block;
       width: 100%;
       height: 1000px;
       border: 1px solid #ccc;
       margin-top: 30px;
+      display: block;
     }
 
     .loading-message {
       text-align: center;
       font-style: italic;
       color: #666;
-      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -62,19 +51,19 @@
       <h2>Reference data for loan consideration stage</h2>
       <p>Before you apply for a loan, there is some information about:</p>
       <ul>
-        <li><strong>Distribution of loan amounts by loan purpose: </strong>Use box plots to compare median, upper and lower quartiles, outliers, and more for typical loan amounts.</li>
-        <li><strong>Box plots: </strong>Box plots show the center, range, and outliers of loan amounts using a box and whiskers—helping compare different loan purposes at a glance.</li>
-        <li><strong>Avoid blindly overestimating the loan amount: </strong>Use data visualization to help assess whether goals are set too high or too low.</li>
-        <li><strong>"Classic Solution" combinations for various loan objectives: </strong>For example, what is the usual loan amount applied for for a certain purpose, what is the term and the common interest rate.</li>
+        <li><strong>Distribution of loan amounts by loan purpose:</strong> Use box plots to compare median, upper and lower quartiles, outliers, and more for typical loan amounts.</li>
+        <li><strong>Box plots:</strong> Box plots show the center, range, and outliers of loan amounts using a box and whiskers—helping compare different loan purposes at a glance.</li>
+        <li><strong>Avoid blindly overestimating the loan amount:</strong> Use data visualization to help assess whether goals are set too high or too low.</li>
+        <li><strong>"Classic Solution" combinations for various loan objectives:</strong> For example, what is the usual loan amount applied for for a certain purpose, what is the term and the common interest rate.</li>
         <li><strong>You can click your interested purpose to highlight its relative information.</strong></li>
       </ul>
 
       <div class="loading-message">Loading Tableau visualization... please wait.</div>
 
-      <!-- 使用新版 tableau-viz 标签嵌入图表 -->
+      
       <tableau-viz 
-        id="loanViz" 
-        src="https://public.tableau.com/views/WanqingLyu-Dissertation/Web2" 
+        id="loanViz"
+        src="https://public.tableau.com/views/WanqingLyu-Dissertation/Web2_new"
         toolbar="bottom"
         hide-tabs
         loading="eager"
