@@ -5,6 +5,7 @@
   <title>I am considering loan</title>
   <link rel="stylesheet" href="style.css">
 
+  <!-- 引入 Tableau Embedding API v3 -->
   <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
 
   <style>
@@ -26,6 +27,27 @@
       font-size: 16px;
       text-align: justify;
     }
+
+    .dashboard-section ul {
+      line-height: 1.8;
+      font-size: 16px;
+      color: #333;
+    }
+
+    tableau-viz {
+      display: block;
+      width: 100%;
+      height: 1000px;
+      border: 1px solid #ccc;
+      margin-top: 30px;
+    }
+
+    .loading-message {
+      text-align: center;
+      font-style: italic;
+      color: #666;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 
@@ -33,7 +55,7 @@
   <div class="wrapper">
     <header>
       <h1>Consideration about loan decision</h1>
-      <p>The following content show the approximate loan range for different loan purposes</p>
+      <p>The following content shows the approximate loan range for different loan purposes.</p>
     </header>
 
     <main class="dashboard-section">
@@ -44,40 +66,20 @@
         <li><strong>Box plots: </strong>Box plots show the center, range, and outliers of loan amounts using a box and whiskers—helping compare different loan purposes at a glance.</li>
         <li><strong>Avoid blindly overestimating the loan amount: </strong>Use data visualization to help assess whether goals are set too high or too low.</li>
         <li><strong>"Classic Solution" combinations for various loan objectives: </strong>For example, what is the usual loan amount applied for for a certain purpose, what is the term and the common interest rate.</li>
-        <li><strong>You can click your interested purpose to highlight its relative information</li>
+        <li><strong>You can click your interested purpose to highlight its relative information.</strong></li>
       </ul>
 
-      <div class='tableauPlaceholder' id='viz1753645904771' style='position: relative; min-height: 1000px;'>
-        <noscript>
-          <a href='#'>
-            <img alt='Web2 ' src='https://public.tableau.com/static/images/Wa/WanqingLyu-Dissertation/Web2/1_rss.png' style='border: none' />
-          </a>
-        </noscript>
-        <object class='tableauViz' style='display: block; width: 100%; height: 1000px;'>
-          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-          <param name='embed_code_version' value='3' />
-          <param name='site_root' value='' />
-          <param name='name' value='WanqingLyu-Dissertation/Web2?:refresh=yes' />
-          <param name='tabs' value='no' />
-          <param name='toolbar' value='yes' />
-          <param name='static_image' value='https://public.tableau.com/static/images/Wa/WanqingLyu-Dissertation/Web2/1.png' />
-          <param name='animate_transition' value='yes' />
-          <param name='display_static_image' value='yes' />
-          <param name='display_spinner' value='yes' />
-          <param name='display_overlay' value='yes' />
-          <param name='display_count' value='yes' />
-          <param name='language' value='zh-CN' />
-          <param name='filter' value='publish=yes' />
-        </object>
-      </div>
+      <div class="loading-message">Loading Tableau visualization... please wait.</div>
 
-      <script type='text/javascript'>
-        var divElement = document.getElementById('viz1753645904771');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-      </script>
+      <!-- 使用新版 tableau-viz 标签嵌入图表 -->
+      <tableau-viz 
+        id="loanViz" 
+        src="https://public.tableau.com/views/WanqingLyu-Dissertation/Web2" 
+        toolbar="bottom"
+        hide-tabs
+        loading="eager"
+        language="zh-CN">
+      </tableau-viz>
     </main>
 
     <footer>
