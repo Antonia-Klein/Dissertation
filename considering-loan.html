@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>I am considering loan</title>
+  <link rel="stylesheet" href="style.css">
+
   <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+
   <style>
     .dashboard-section {
       max-width: 1000px;
@@ -17,25 +20,11 @@
       margin-bottom: 20px;
     }
 
-    .dashboard-section p,
-    .dashboard-section ul {
-      font-size: 16px;
-      color: #333;
+    .dashboard-section p {
       line-height: 1.8;
-    }
-
-    tableau-viz {
-      width: 100%;
-      height: 1000px;
-      border: 1px solid #ccc;
-      margin-top: 30px;
-      display: block;
-    }
-
-    .loading-message {
-      text-align: center;
-      font-style: italic;
-      color: #666;
+      color: #333;
+      font-size: 16px;
+      text-align: justify;
     }
   </style>
 </head>
@@ -44,31 +33,51 @@
   <div class="wrapper">
     <header>
       <h1>Consideration about loan decision</h1>
-      <p>The following content shows the approximate loan range for different loan purposes.</p>
+      <p>The following content show the approximate loan range for different loan purposes</p>
     </header>
 
     <main class="dashboard-section">
       <h2>Reference data for loan consideration stage</h2>
-      <p>Before you apply for a loan, there is some information about:</p>
+      <p>Before you apply for a loan, you can learn about:</p>
       <ul>
-        <li><strong>Distribution of loan amounts by loan purpose:</strong> Use box plots to compare median, upper and lower quartiles, outliers, and more for typical loan amounts.</li>
-        <li><strong>Box plots:</strong> Box plots show the center, range, and outliers of loan amounts using a box and whiskers—helping compare different loan purposes at a glance.</li>
-        <li><strong>Avoid blindly overestimating the loan amount:</strong> Use data visualization to help assess whether goals are set too high or too low.</li>
-        <li><strong>"Classic Solution" combinations for various loan objectives:</strong> For example, what is the usual loan amount applied for for a certain purpose, what is the term and the common interest rate.</li>
-        <li><strong>You can click your interested purpose to highlight its relative information.</strong></li>
+        <li><strong>Distribution of loan amounts by loan purpose: </strong>Use box plots to compare median, upper and lower quartiles, outliers, and more for typical loan amounts.</li>
+        <li><strong>Box plots: </strong>Box plots show the center, range, and outliers of loan amounts using a box and whiskers—helping compare different loan purposes at a glance.</li>
+        <li><strong>Avoid blindly overestimating the loan amount: </strong>Use data visualization to help assess whether goals are set too high or too low.</li>
+        <li><strong>"Classic Solution" combinations for various loan objectives:</strong>For example, what is the usual loan amount applied for for a certain purpose, what is the term and the common interest rate.</li>
       </ul>
 
-      <div class="loading-message">Loading Tableau visualization... please wait.</div>
+      <!-- 嵌入 Tableau 仪表盘 Web2 -->
+      <div class='tableauPlaceholder' id='viz1753645904771' style='position: relative; min-height: 1000px;'>
+        <noscript>
+          <a href='#'>
+            <img alt='Web2 ' src='https://public.tableau.com/static/images/Wa/WanqingLyu-Dissertation/Web2/1_rss.png' style='border: none' />
+          </a>
+        </noscript>
+        <object class='tableauViz' style='display: block; width: 100%; height: 1000px;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+          <param name='embed_code_version' value='3' />
+          <param name='site_root' value='' />
+          <param name='name' value='WanqingLyu-Dissertation/Web2' />
+          <param name='tabs' value='no' />
+          <param name='toolbar' value='yes' />
+          <param name='static_image' value='https://public.tableau.com/static/images/Wa/WanqingLyu-Dissertation/Web2/1.png' />
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='zh-CN' />
+          <param name='filter' value='publish=yes' />
+        </object>
+      </div>
 
-      
-      <tableau-viz 
-        id="loanViz"
-        src="https://public.tableau.com/views/WanqingLyu-Dissertation/Web2_new"
-        toolbar="bottom"
-        hide-tabs
-        loading="eager"
-        language="zh-CN">
-      </tableau-viz>
+      <script type='text/javascript'>
+        var divElement = document.getElementById('viz1753645904771');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
     </main>
 
     <footer>
